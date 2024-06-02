@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config time="Mon Oct 03 17:06:03 AEDT 2016">
+	<Browser>chrome</Browser>
+	<BrowserBinary>{user_home}\AppData\Local\Chromium\Application\chrome.exe</BrowserBinary>
+	<Headless>false</Headless>
+	<!--  <Url>https://ibank1test.bankofmelbourne.com.au/ibank/</Url>-->
+	 <Url>https://e2eibank-ext.bankofmelbourne.com.au/ibank/</Url>
+	<ScreenShotOnFail>true</ScreenShotOnFail>
+	<ScreenShotOnPass>false</ScreenShotOnPass>
+	<ScreenShotPath>D:\CompassTestAutomation\ScreenShots</ScreenShotPath>
+	<TakeFullScreenShot>false</TakeFullScreenShot>
+	<TestDataFile>TestData_IBank_AKAMAI.xlsx</TestDataFile>
+	<ExtentReportFile>D:\CompassTestAutomation\TestReport\Extent\IBank\IBank_ExtentReport_Akamai.html</ExtentReportFile>
+	<AppendExistingReport>false</AppendExistingReport>
+	<FeatureOrderDir>D:\CompassTestAutomation\FeatureOrder_IBank_Akamai</FeatureOrderDir>
+	<TestSummaryDoc>D:\CompassTestAutomation\TestSummary_IBank_Akamai.docx</TestSummaryDoc>
+	<ExitOnFail>false</ExitOnFail>
+	<ElementWait>10</ElementWait>
+</config>

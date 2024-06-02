@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config time="Mon Oct 03 17:06:03 AEDT 2016">
+	<Browser>chrome</Browser>
+	<Headless>false</Headless>
+	<BrowserBinary>C:\Program Files\Google\Chrome\Application\chrome.exe</BrowserBinary>
+	<UseBrowserStack>false</UseBrowserStack>
+	<UserName>sarathkavati_CNZs1x</UserName>
+	<AutomateKey>sgJbJnWu2sfqpfJzCb9x</AutomateKey>
+	<ScreenShotOnFail>true</ScreenShotOnFail>
+	<ScreenShotOnPass>true</ScreenShotOnPass>
+	<TestDataDir>{user_dir}\src\test\resources\UITestResource\data</TestDataDir>
+	<ScreenShotPath>{user_dir}\target\TestReport\UITest\ScreenShots</ScreenShotPath>
+	<TakeFullScreenShot>false</TakeFullScreenShot>
+	<ExtentReportFile>{user_dir}\target\TestReport\UITest\TestReport.html</ExtentReportFile>
+	<AppendExistingReport>false</AppendExistingReport>
+	<ElementWait>5</ElementWait>	
+</config>

@@ -1,0 +1,69 @@
+Proof_of_Balance.feature
+Account_details_ib.feature
+#Account_Transfers.feature
+Transfers_ib.feature
+Message_centre_view_details_ib.feature
+View_message_centre_summary_ib.feature
+Login_via_Remember_CAN.feature
+Schedule_Inquiry_ib.feature
+Pay_credit_card_any_amount_ib.feature
+#Contact_details_view.feature
+#Update_ContactDetails.feature
+#Update_ContactDetails_ib.feature
+Add_payee_ib.feature
+New_TP_WhenMaking_A_Payment.feature
+Travel_notification_ib.feature
+Transaction_Cross_Sell_Details_ib.feature
+#ExternalLink_CreditCard.feature
+#ExternalLink_Personal_Loans.feature
+#ExternalLink_Travel_money_card.feature
+Manage_mail_ib.feature
+#ExternalLink_BT_Super_For_Life.feature
+#ExternalLink_Search_For_Your_Super_withSuperCheck_ib.feature
+LockAndUnlockCard_ib.feature
+Update_Tax_Residency_Information_ib.feature
+#Activate_New_Card.feature
+View_Financial_Years_Interest.feature
+BPay_Transfers.feature
+Categorisation_DDA_ib.feature
+ThirdParty_Transfers.feature
+Rename_Reorder.feature
+Manage_ATM_Limit.feature
+Change_Card_PIN.feature
+ViewingTransactions.feature
+Logon.feature
+TP_PayeeMaintenance.feature
+CreateSMSAlert.feature
+ExternalLink_Home_Loans.feature
+Overseas_Transfer.feature
+Overseas_transfers_ib.feature
+Register_Internet_Banking.feature
+Import_Payees_and_Billers.feature
+CreditCardAccountDetails.feature
+ExternalLink_Transaction_Accounts.feature
+View_eStatement_list.feature
+#Pay_to_Payid.feature
+View Direct Debits.feature
+#OutWardPayment.feature
+InWardPayment.feature
+#Global_Wallet_Card_ib.feature
+#Dispute_Card_Transaction.feature
+EasyPayment.feature
+Change_Font_preference.feature
+Change_account_order.feature
+online cheque deposit.feature
+#commenting below 2 features as Jenkins does not allow access to file system
+#Proof_of_Balance_ib.feature
+#Transaction_Listing_ib.feature
+abusiveTransactions.feature
+#Contact Us.feature
+#Term Deposits.feature
+#Forgotten_Logon_Details.feature
+#Card_Auto_Pay_ib.feature
+#Change_Password.feature
+#Change_Security_Number.feature
+Create_Alerts_ib.feature
+#PayeeLimit.feature
+#VerifyTransactionHistory_ib.feature
+#data issue
+#View_eStatement_ib.feature

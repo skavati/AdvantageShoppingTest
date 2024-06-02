@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config time="Mon Oct 03 17:06:03 AEDT 2016">
+	<Parallel>false</Parallel>
+	<UserName>sarathkavati_CNZs1x</UserName>
+	<AutomateKey>sgJbJnWu2sfqpfJzCb9x</AutomateKey>
+	<Headless>false</Headless>
+	<BrowserBinary>C:\Program Files\Google\Chrome\Application\chrome.exe</BrowserBinary>
+	<Environment>uat</Environment>
+	<ScreenShotOnFail>true</ScreenShotOnFail>
+	<ScreenShotOnPass>true</ScreenShotOnPass>
+	<TestDataDir>{user_dir}\src\test\resources\AppTestResource\data</TestDataDir>
+	<ScreenShotPath>{user_dir}\target\TestReport\CommunityAppTest\ScreenShots</ScreenShotPath>
+	<ExtentReportFile>{user_dir}\target\TestReport\CommunityAppTest\TestReport.html</ExtentReportFile>
+	<FeatureOrderDir>target\FeatureOrder_AppTest</FeatureOrderDir>
+	<AppendExistingReport>false</AppendExistingReport>
+</config> 

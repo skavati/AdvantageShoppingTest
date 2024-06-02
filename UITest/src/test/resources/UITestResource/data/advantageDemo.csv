@@ -1,0 +1,2 @@
+RunTest,Feature,Scenario,URL,Browser,UserName,FirstName,LastName,Email,Phone,,,,,,LookingToBuy,EquipmentType
+Y,Advantage Online Shopping,Mandatory field error messages display & clear,https://www.advantageonlineshopping.com/,chrome,SarathKavati,Sarath,Kavati,sarath.kavati@gmail.com,411225256,,,,,,,

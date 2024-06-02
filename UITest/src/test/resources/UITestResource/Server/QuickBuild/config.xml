@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config time="Mon Oct 03 17:06:03 AEDT 2016">
+	<Browser>chrome</Browser>
+	<BrowserBinary>{user_home}\AppData\Local\Chromium\Application\chrome.exe</BrowserBinary>
+	<!-- <Url>https://ibanking.stgeorge.com.au/ibank/</Url> -->
+	<ScreenShotOnFail>true</ScreenShotOnFail>
+	<ScreenShotOnPass>false</ScreenShotOnPass>
+	<ScreenShotPath>{user_dir}\TestReport\ScreenShots</ScreenShotPath>
+	<TakeFullScreenShot>false</TakeFullScreenShot>
+	<ExtentReportFile>TestReport\Extent\IBank\IBank_ExtentReport.html</ExtentReportFile>
+	<FeatureOrderDir>temp4Auto\FeatureOrder_IBank</FeatureOrderDir>
+	<TestSummaryDoc>TestReport\Test_Summary\TestSummary_IBank.docx</TestSummaryDoc>
+	<AppendExistingReport>false</AppendExistingReport>
+	 <!-- CHANGE following when needed-->
+            <JAVA_HOME>C:\Program Files\Java\jdk1.8.0_121</JAVA_HOME>
+            <Url>https://vp1ibank.stgeorge.com.au/ibank/</Url>
+            <TestDataFile>TestData_IBank_SIT.xlsx</TestDataFile>
+			<UseYourOwnCredentials>false</UseYourOwnCredentials>   
+			<CopyFilesToJAR>false</CopyFilesToJAR>
+			<ExitOnFail>true</ExitOnFail>
+	        <ElementWait>5</ElementWait> 		
+</config>

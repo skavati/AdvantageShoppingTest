@@ -1,0 +1,169 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>CommunityAppTest</groupId>
+	<artifactId>CommunityAppTest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<properties>
+		<!--  To remove [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent! -->
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<selenium.version>3.141.59</selenium.version>
+		<cucumber.version>7.13.0</cucumber.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+			<!-- <scope>test</scope> to run junit tests even in src/main/java not 
+				just in src/test/java using @Test -->
+		</dependency>
+		<!-- user added dependency -->
+		<!-- Selenium -->
+		<!-- <dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.version}</version> 
+		</dependency> -->
+		<!-- Selenium -->
+		<!-- Report -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.31</version>
+		</dependency>
+		<!-- Report -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>7.6.0</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.ow2.asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>9.5</version>
+		</dependency> 
+		<dependency>
+			<groupId>Common</groupId>
+			<artifactId>Common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<!-- Resources START -->
+		<!-- <resources> <resource> <directory>src/test/resources/features/Team</directory> 
+			<excludes> <exclude>>NeilArmstrong/**</exclude> </excludes> </resource> </resources> -->
+		<!-- Resources END -->
+		<!-- To fix syntax error (Plugin execution not covered by lifecycle configuration: 
+			org.codehaus.mojo:exec-maven-plugin:1.2.1:java (execution: default, phase: 
+			generate-sources) for plugin "exec-maven-plugin" "" 
+			In summary***In order for m2e to recognize "exec-maven-plugin" use below-->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.codehaus.mojo</groupId>
+										<artifactId>exec-maven-plugin</artifactId>
+										<versionRange>[1.2.1,)</versionRange>
+										<goals>
+											<goal>java</goal>
+											<goal>exec</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<!-- End***To fix syntax error (Plugin execution not covered by lifecycle configuration: 
+			org.codehaus.mojo:exec-maven-plugin:1.2.1:java (execution: default, phase: 
+			generate-sources)for plugin "exec-maven-plugin" "" -->
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.22.2</version>
+				<configuration>
+					<!-- to terminate Maven run use forkCount=0 -->
+					<forkCount>0</forkCount>
+					<!-- to disable testNG -->
+					<testNGArtifactName>none:none</testNGArtifactName>
+					<includes>
+						<!-- <include>**/ARunOrderTestSuite.java</include> -->
+						<include>**/CommunityAppTestSuite1.java</include>
+					  <!--  <include>**/CommunityAppTestSuite2.java</include>
+					    <include>**/CommunityAppTestSuite3.java</include> -->
+					</includes>
+					<argLine>-Xmx512m</argLine>
+					<!-- <forkCount>1</forkCount> each class runs on its own JVM process 
+						concurrently <reuseForks>true</reuseForks> -->
+					<!-- <argLine>-javaagent:serenity/serenity.jar -Xms512m -Xmx1024m ${included.packages} 
+						${included.adapters}</argLine> -->
+					<!-- <systemPropertyVariables> <webdriver.driver>${webdriver.firefox}</webdriver.driver> 
+						<webdriver.ie.driver>${webdriver.ie}</webdriver.ie.driver> </systemPropertyVariables> -->
+					<!-- <skipAfterFailureCount>4</skipAfterFailureCount> -->
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>false</showWarnings>
+					<showDeprecation>false</showDeprecation>
+					<!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>Common</groupId>
+				<artifactId>Common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

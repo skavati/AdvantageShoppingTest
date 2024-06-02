@@ -1,0 +1,41 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+<profiles>
+    <profile>
+    <id>maven-https</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>            
+        </repository>
+		 <repository>
+        <id>smartbear</id>
+        <name>smartbear repository</name>
+        <url>https://smartbearsoftware.com/repository/maven2</url>		
+    </repository>
+	 <repository>
+        <id>jcenter</id>
+        <name>jcenter</name>
+        <url>https://jcenter.bintray.com</url>
+    </repository>		
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+		 <pluginRepository>
+        <id>smartbear-sweden-plugin-repository</id>
+        <url>https://www.soapui.org/repository/maven2/</url>
+    </pluginRepository>
+    </pluginRepositories> 
+</profile>
+</profiles>
+</settings>

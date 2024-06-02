@@ -1,0 +1,294 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>IBank</groupId>
+	<artifactId>IBank</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>IBank</name>
+	<packaging>jar</packaging>
+
+	<!-- <properties> <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
+		<selenium.version>3.4.0</selenium.version> <serenity.version>1.1.17</serenity.version> 
+		<serenity.cucumber.version>1.1.1</serenity.cucumber.version> <webdriver.firefox>firefox</webdriver.firefox> 
+		<webdriver.ie>webdrivers\IEDriverServer.exe</webdriver.ie> THis is where 
+		my IEdriver is located in my project parent folder <included.packages>-Dincluded.packages=ibank,ibank.pages,ibank.stepdefinitions,ibank.steps</included.packages> 
+		<included.adapters>-Dincluded.adapters=coverage,complexity,dependency</included.adapters> 
+		</properties> -->
+	<properties>
+		<selenium.version>3.12.0</selenium.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<!-- <java.version>1.7</java.version> -->
+		<version.maven.compiler>2.3.2</version.maven.compiler>
+		<version.maven.site>3.3</version.maven.site>
+		<version.sonar>4.3</version.sonar>
+		<!-- <artifact.id>MBankWeb2JAR</artifact.id> -->
+	</properties>
+
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>bintray</name>
+			<url>https://jcenter.bintray.com</url>
+		</repository>
+		<repository>
+			<id>lib</id>
+			<url>file://${project.basedir}/src/main/resources/MBResource/lib</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>bintray-plugins</name>
+			<url>https://jcenter.bintray.com</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<!-- <dependency> <groupId>net.serenity-bdd</groupId> <artifactId>serenity-core</artifactId> 
+			<version>${serenity.version}</version> </dependency> <dependency> <groupId>net.serenity-bdd</groupId> 
+			<artifactId>serenity-cucumber</artifactId> <version>${serenity.cucumber.version}</version> 
+			<scope>test</scope> </dependency> -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<!-- <scope>test</scope> to run junit tests even in src/main/java not 
+				just in src/test/java using @Test -->
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
+			<version>1.2.17</version> </dependency> -->
+		<dependency>
+			<groupId>com.googlecode.lambdaj</groupId>
+			<artifactId>lambdaj</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+
+		<!-- user added dependency -->
+		<!-- Selenium -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+		<!-- Selenium -->
+
+		<!-- Report -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.31</version>
+		</dependency>
+		<!-- Report -->
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.10</version>
+		</dependency>
+
+		<!-- Email -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!-- Email -->
+
+		<!-- Excel -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.13</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.13</version>
+		</dependency>
+		<!-- Excel -->
+
+		<!-- appium -->
+		<!-- <dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>3.3.0</version>
+		</dependency> -->
+		<!-- appium -->
+
+		<dependency>
+			<groupId>org.ow2.asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>5.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.7.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		<!-- sikuli -->
+		<dependency>
+			<groupId>com.sikuli</groupId>
+			<artifactId>sikulixapi</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<!-- sikuli -->
+		<!-- <dependency> <groupId>com.google.guava</groupId> <artifactId>guava</artifactId> 
+			<version>21.0</version> </dependency> -->
+		<!-- Cucumber HTML Results Report -->
+		<!-- <dependency> <groupId>com.github.mkolisnyk</groupId> <artifactId>cucumber-reports</artifactId> 
+			<version>1.0.7</version> </dependency> <dependency> <groupId>info.cukes</groupId> 
+			<artifactId>cucumber-java</artifactId> <version>1.2.4</version> </dependency> 
+			<dependency> <groupId>info.cukes</groupId> <artifactId>cucumber-core</artifactId> 
+			<version>1.2.4</version> </dependency> -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<!-- End Cucumber HTML Results Report -->
+		<!-- log4j2 -->
+		<!--To send messages to console output and log file -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.12.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.12.1</version>
+		</dependency>
+		<!-- End log4j2 -->
+		<!-- End of User added dependency -->
+		<dependency>
+			<groupId>Common</groupId>
+			<artifactId>Common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.maven.compiler}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>${version.maven.site}</version>
+			</plugin>
+			<!-- LAUNCH4J -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+						<!-- <descriptorRef>project</descriptorRef> -->
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>ibank.IBankTestSuite</mainClass>
+						</manifest>
+					</archive>
+					<!-- <resources> <resource> <directory>${basedir}/src/main/resources/featurelist</directory> 
+						<filtering>false</filtering> </resource> </resources> -->
+				</configuration>
+				<executions>
+					<execution>
+						<id>assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attached</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		<!-- Below plugin 'launch4j' couldn't be downloaded..
+			Error resolving version for plugin
+			'com.akathist.maven.plugins.launch4j:launch4j-maven-plugin' from the
+			repositories [local (C:\Users\l083125\.m2\repository), central
+			(https://jcenter.bintray.com)]: Plugin not found in any plugin
+			repository  -->
+			<!-- <plugin> <groupId>com.akathist.maven.plugins.launch4j</groupId> <artifactId>launch4j-maven-plugin</artifactId> 
+				<version>1.7.18</version> <executions> <execution> <id>l4j-clui</id> <phase>package</phase> 
+				<goals> <goal>launch4j</goal> </goals> <configuration> <headerType>console</headerType> 
+				<headerType>gui</headerType> <jar>target/IBank-0.0.1-SNAPSHOT-jar-with-dependencies.jar</jar> 
+				<outfile>target/IBank.exe</outfile> <downloadUrl>http://java.com/download</downloadUrl> 
+				<classPath> <mainClass>ibank.IBankTestSuite</mainClass> </classPath> <icon>src/main/resources/IBResource/icons/stg.ico</icon> 
+				<jre> <bundledJre64Bit>false</bundledJre64Bit> <bundledJreAsFallback>false</bundledJreAsFallback> 
+				<minVersion>1.8.0</minVersion> <minVersion>1.7.0</minVersion> <jdkPreference>preferJre</jdkPreference> 
+				<runtimeBits>32</runtimeBits> </jre> <versionInfo> <fileVersion>1.0.0.0</fileVersion> 
+				<txtFileVersion>${project.version}</txtFileVersion> <fileDescription>${project.name}</fileDescription> 
+				<copyright>C</copyright> <productVersion>1.0.0.0</productVersion> <txtProductVersion>1.0.0.0</txtProductVersion> 
+				<productName>${project.name}</productName> <internalName>AppName</internalName> 
+				<originalFilename>IBank.exe</originalFilename> </versionInfo> </configuration> 
+				</execution> </executions> </plugin> -->
+			<!-- LAUNCH4J END -->
+		</plugins>
+	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>Common</groupId>
+				<artifactId>Common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

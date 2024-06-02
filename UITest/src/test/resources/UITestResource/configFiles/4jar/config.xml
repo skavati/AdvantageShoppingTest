@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config time="Mon Oct 03 17:06:03 AEDT 2016">
+	<Browser>chrome</Browser>
+	 <Url>https://ibanking.stgeorge.com.au/ibank/</Url>
+	<!--<Url>https://e2eibank.banksa.com.au/ibank/</Url>-->
+	<ScreenShotOnFail>true</ScreenShotOnFail>
+	<ScreenShotOnPass>false</ScreenShotOnPass>
+	<TestDataFile>TestData_IBank_UAT.xlsx</TestDataFile>
+	<ScreenShotPath>{user_dir}\TestReport\ScreenShots</ScreenShotPath>
+	<TakeFullScreenShot>false</TakeFullScreenShot>
+	<ExtentReportFile>TestReport\Extent\IBank\IBank_ExtentReport.html</ExtentReportFile>
+	<FeatureOrderDir>temp4Auto\FeatureOrder_IBank</FeatureOrderDir>
+	<TestSummaryDoc>TestReport\Test_Summary\TestSummary_IBank.docx</TestSummaryDoc>
+</config>

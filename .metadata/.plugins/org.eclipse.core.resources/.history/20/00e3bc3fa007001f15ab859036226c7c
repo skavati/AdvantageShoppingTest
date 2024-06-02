@@ -1,0 +1,22 @@
+@login @appTest
+Feature: LoginAndLogout
+
+  @tearDown 
+  Scenario: Login and Logout Happy Path
+    #Given scenario starts "AppTestData" "LoginAndLogout" "LoginAndLogout Happy Path"
+    #Given I launch Credabl app on device
+    And I close login screen
+    
+    #And I tap on Login button
+    #And I created a session PIN
+    #And I enter login credentials
+    #When I click on Sign in
+    #Then I should verify successful loginto Credabl
+    #Given I click on menu
+    #And I click on Logout
+    #Given scenario LoginAndLogout Happy Path ends
+    
+  
+    
+    
+    

@@ -1,0 +1,1 @@
+c: powershell.exe -file .\src\test\resources\IBResource\powershell\CopyFeatureFilesToTempFolder.ps1
