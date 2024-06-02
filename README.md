@@ -2,5 +2,5 @@
 # open command line
 # change directory to Common project
 # Run command mvn clean install
-# Now change directory to CommunityAppTest
+# Now change directory to UITest
 # Run "mvn clean verify"
